@@ -112,6 +112,20 @@ switch gridname
          discardChannelsVec = zeros(16,1);
         IED = 1;
         emgtype = 2;
+		
+	case 'TMSiTextile48L'
+		ElChannelMap = [ 8,  7,  6,  5,  4,  3,  2,  1;
+						14, 15, 16, 13, 12, 11, 10,  9;
+						19, 18, 17, 20, 21, 22, 23, 24;
+						25, 26, 27, 28, 29, 30, 31, 32 ];
+		discardChannelsVec = zeros(32,1);
+		IED = 8.75;
+		emgtype = 1;
+	case 'TMSiGrid8x8'
+		ElChannelMap = flipud(reshape(1:64, 8, 8));
+		discardChannelsVec = zeros(64,1);
+		IED = 8.75;
+		emgtype = 1;
 end
 
 for r=1:size(ElChannelMap,1) % electrode array 1
